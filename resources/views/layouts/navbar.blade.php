@@ -8,12 +8,22 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+
+            @if( url()-> current() == url('/'))
                 <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                <li class="nav-item"><a class="nav-link btn btn-info" href="/login">Login</a></li>
-                
+                <li class="nav-item"><a class="nav-link btn btn-info" href="{{ url('/login') }}">Login</a></li>
+            @else
+                <li class="nav-item"><a class="nav-link" href="{{ url('/') }}#services">Services</a></li>
+                 <li class="nav-item"><a class="nav-link" href="{{ url('/') }}#portfolio">Portfolio</a></li>
+                 <li class="nav-item"><a class="nav-link" href="{{ url('/') }}#about">About</a></li>
+                 <li class="nav-item"><a class="nav-link" href="{{ url('/') }}#contact">Contact</a></li>
+                 <li class="nav-item"><a class="nav-link btn btn-info" href="{{ url('/login') }}">Login</a></li>
+
+            @endif
+
             </ul>
         </div>
     </div>

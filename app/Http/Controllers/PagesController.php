@@ -18,4 +18,10 @@ public function login()
 
 }
 
+public function dashboard()
+{
+    return view('dashboard.dashboard');
+
+}
+
 }
